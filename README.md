@@ -1,32 +1,35 @@
 # Project Overview
 
+[Dota 2](https://www.dota2.com/home) is a popular free-to-play MOBA *(**M**ultiplayer **O**nline **B**attle **A**rena)* developed by **Valve**. It is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map. Each player independently controls a powerful character known as a "hero" with unique abilities and play styles. During a match, players collect experience points and items for their heroes to defeat the opposing team's heroes in player-versus-player *(PVP)* combat. A team wins by being the first to destroy the other team's "Ancient," a large structure located within their base.
 
+Despite being released in 2013, the game still has a solid global fanbase. It has consistently maintained 500,000 monthly active users to this day. However, it has lost some users from its peak over the years to its main competitor, **League of Legends**. I am interested in exploring its player base's behavioural patterns and in-game attributes to understand player engagement in live service games and improve the player experience overall.
 
-## Areas of Interest
+---
 
+# Proposed Solution
 
+Through analyzing data from multiple matches and utilizing various machine learning techniques such as clustering and sentiment analysis, we can construct player profiles. These profiles can then be used to match each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
 
-## Problem Area
+## Objectives
+- Improve player engagement by enhancing matchmaking by accurately classifying players based on skill level, region, preferred position and heroes, and essential personality traits inferred from in-game activity.
 
+## Hypotheses
+- *Balancing matches based on player skill levels increases player retention.*
+- *Players perform better when matched with compatible personalities, leading to increased engagement.*
 
+## Potential Impact
 
-## Data Science Solution
-
-
+Retaining users has become increasingly difficult as competition intensifies, particularly for startups and new F2P games, as seen in the case of [***Omega Strikers***](https://www.youtube.com/watch?v=6blfDQzmIoQ). Developing a successful profiling and matchmaking model that forecasts the best matchups can assist indie studios in iterating more effectively and keeping players engaged.
 
 ---
 
 # Dataset Description
 
-*From [**Devin Anzelmo**](https://www.kaggle.com/datasets/devinanzelmo/dota-2-matches/data):*
-
-This dataset contains 50,000 ranked ladder matches from the Dota 2 data dump created by [Opendota](https://www.opendota.com/). It was inspired by the [Dota 2 Matches](https://www.kaggle.com/jraramirez/dota-2-matches-dataset) data published here by **Joe Ramir**. This is an updated and improved version of that dataset.
-
-Dota 2 is a popular MOBA available as free to play, and can take up thousands of hours of your life. The number of games in this dataset are played about every hour. If you like the data there are an additional 2-3 million matches easily available for download.
-
-This dataset aims to enable the exploration of player behaviour, skill estimation, or anything else you find interesting. The intent is to create an accessible and easy-to-use resource that can be expanded and modified if needed. As such, I am open to a wide variety of suggestions as to what additions or changes to make.
+This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/datasets/devinanzelmo/dota-2-matches/data) and contains 50,000 ranked ladder matches from the Dota 2 data dump created by [Opendota](https://www.opendota.com/). It was inspired by the [Dota 2 Matches](https://www.kaggle.com/jraramirez/dota-2-matches-dataset) data published by **Joe Ramir**. This is an updated and improved version of that dataset. The number of games in this dataset are played about every hour. 
 
 > [**Quick look at how the dataset is structured**](https://www.kaggle.com/code/devinanzelmo/a-quick-look-at-dota-2-dataset)
+
+## Dataset Directory
 
 |   CSV File             |  Description  | Notes |
 |:-----------------------|:--------------|:------|
