@@ -1,4 +1,7 @@
-# Project Overview
+# Dota 2 Matchmaking Modelling
+=========================
+
+## Project Overview
 
 [Dota 2](https://www.dota2.com/home) is a popular free-to-play MOBA *(**M**ultiplayer **O**nline **B**attle **A**rena)* developed by **Valve**. It is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map. Each player independently controls a powerful character known as a "hero" with unique abilities and play styles. During a match, players collect experience points and items for their heroes to defeat the opposing team's heroes in player-versus-player *(PVP)* combat. A team wins by being the first to destroy the other team's "Ancient," a large structure located within their base.
 
@@ -6,30 +9,30 @@ Despite being released in 2013, the game still has a solid global fanbase. It ha
 
 ---
 
-# Proposed Solution
+## Proposed Solution
 
 Through analyzing data from multiple matches and utilizing various machine learning techniques such as clustering and sentiment analysis, we can construct player profiles. These profiles can then be used to match each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
 
-## Objectives
+### Objectives
 - Improve player engagement by enhancing matchmaking by accurately classifying players based on skill level, region, preferred position and heroes, and essential personality traits inferred from in-game activity.
 
-## Hypotheses
+### Hypotheses
 - *Balancing matches based on player skill levels increases player retention.*
 - *Players perform better when matched with compatible personalities, leading to increased engagement.*
 
-## Potential Impact
+### Potential Impact
 
 Retaining users has become increasingly difficult as competition intensifies, particularly for startups and new F2P games, as seen in the case of [***Omega Strikers***](https://www.youtube.com/watch?v=6blfDQzmIoQ). Developing a successful profiling and matchmaking model that forecasts the best matchups can assist indie studios in iterating more effectively and keeping players engaged.
 
 ---
 
-# Dataset Description
+## Dataset Description
 
 This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/datasets/devinanzelmo/dota-2-matches/data) and contains 50,000 ranked ladder matches from the Dota 2 data dump created by [Opendota](https://www.opendota.com/). It was inspired by the [Dota 2 Matches](https://www.kaggle.com/jraramirez/dota-2-matches-dataset) data published by **Joe Ramir**. This is an updated and improved version of that dataset. The number of games in this dataset are played about every hour. 
 
 > [**Quick look at how the dataset is structured**](https://www.kaggle.com/code/devinanzelmo/a-quick-look-at-dota-2-dataset)
 
-## Dataset Directory
+### Dataset Directory
 
 |   CSV File             |  Description  | Notes |
 |:-----------------------|:--------------|:------|
@@ -56,3 +59,5 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 | **Tests**              |  |  |
 | test_labels            | `match_id` and `radiant_win` as integer 1 or 0 |  |
 | test_player            | Full player and match table with `hero_id`, `player_slot`, `match_id`, and `account_id`|  |
+
+---
