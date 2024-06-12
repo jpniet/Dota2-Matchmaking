@@ -1,5 +1,4 @@
 # Dota 2 Matchmaking Modelling
-=========================
 
 ## Project Overview
 
@@ -26,6 +25,20 @@ Retaining users has become increasingly difficult as competition intensifies, pa
 
 ---
 
+## Table of Contents
+
+1. **Docs**
+2. **Models**
+3. **Notebooks**
+	1. [Data Cleaning and Exploration](/Notebooks/Data-Cleaning_and_Exploration)
+	2. Players EDA
+	3. Chat EDA
+4. **References**
+5. **Reports**
+6. **src**
+
+---
+
 ## Dataset Description
 
 This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/datasets/devinanzelmo/dota-2-matches/data) and contains 50,000 ranked ladder matches from the Dota 2 data dump created by [Opendota](https://www.opendota.com/). It was inspired by the [Dota 2 Matches](https://www.kaggle.com/jraramirez/dota-2-matches-dataset) data published by **Joe Ramir**. This is an updated and improved version of that dataset. The number of games in this dataset are played about every hour. 
@@ -35,8 +48,8 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 ### Dataset Directory
 
 |   CSV File             |  Description  | Notes |
-|:-----------------------|:--------------|:------|
-|  **Match Info**        |  |  |
+|------------------------|:--------------|:------|
+|  **Match Info**                              |||
 | match                  | Top-level information about each match | `tower_status` and `barracks_status` are binary masks indicating whether various structures have been destroyed |
 | players                | Statistics about player's individual performance in each match | Some players chose to hide their account_id and are marked as `0` |
 | player_time            | Contains XP, gold, and last-hit totals for each player at one-minute intervals | The suffix for each variable indicates the value of the `player_slot` variable |
@@ -46,17 +59,17 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 | objectives             | Gives information on all the objectives completed, by which player and at what time |  |
 | ability_upgrades       | Contains the upgrade performed at each level for each player |  |
 | purchase_log           | Contains the time in seconds for each purchase made by every player in every match |  |
-| **Game Info**          |  |  |
+| **Game Info**                                |||
 | ability_ids            | Ability names and ids | Use with `ability_upgrades.csv` to get the names of upgraded abilities |
 | item_ids               | Contains `item_id` and item name | Use with `purchase_log.csv` to get the names of purchased items |
 | hero_ids               | Contains the `name`, `hero_id`, and `localized_name` for each hero a player can pick | Concatenated this file with the one found [here](https://www.kaggle.com/datasets/nihalbarua/dota2-hero-preference-by-mmr) to obtain the `Primary Attribute` and possible Roles |
 | cluster_region         | Contains the cluster number and geographic region | Allows to filter matches by region |
 | patch_dates            | Release dates for various patches | Use `start_time` from `match.csv` to determine which patch was used to play in |
-| **Historical Info**    |  |  |
+| **Historical Info**                          |||
 | MMR                    | Contains `account_id` and players' **Matchmaking Rating** *(**MMR** for short)* | File extracted from the [**OpenDota Core Wiki**](https://github.com/odota/core/wiki/MMR-Data) where the original dataset is based from |
 | player_ratings         | Skill data computed on **900k** previous matches and a possible way to measure skill rating when **MMR** is not available | `trueskill` ratings have two components, `mu`, which can be interpreted as the skill, with the higher value being better, and `sigma` which is the uncertainty of the rating. Negative `account_id` are players not appearing in other data available in this dataset |
 | match_outcomes         | Results with `account_id` for **900k** matches occurring prior the rest of the dataset | Each match has data on two rows. the `rad` feature indicates whether the team is Radiant or Dire. *Useful for creating custom skill calculations* |
-| **Tests**              |  |  |
+| **Tests**                                    |||
 | test_labels            | `match_id` and `radiant_win` as integer 1 or 0 |  |
 | test_player            | Full player and match table with `hero_id`, `player_slot`, `match_id`, and `account_id`|  |
 
