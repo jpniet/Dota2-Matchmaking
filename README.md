@@ -31,7 +31,7 @@ Retaining users has become increasingly difficult as competition intensifies, pa
 2. **Models**
 3. **Notebooks**
 	1. [Data Cleaning and Exploration](Notebooks/Data_Cleaning_and_Exploration.ipynb)
-	2. Players EDA
+	2. [Players EDA](Notebooks/Players_EDA.ipynb)
 	3. Chat EDA
 4. **References**
 5. **Reports**
