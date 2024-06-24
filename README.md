@@ -2,15 +2,17 @@
 
 ## Project Overview
 
-[Dota 2](https://www.dota2.com/home) is a popular free-to-play MOBA *(**M**ultiplayer **O**nline **B**attle **A**rena)* developed by **Valve**. It is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map. Each player independently controls a powerful character known as a "hero" with unique abilities and play styles. During a match, players collect experience points and items for their heroes to defeat the opposing team's heroes in player-versus-player *(PVP)* combat. A team wins by being the first to destroy the other team's "Ancient," a large structure located within their base.
+Matchmaking in online video games is a significant and challenging topic, centred around a simple question: who should play together?
 
-Despite being released in 2013, the game still has a solid global fanbase. It has consistently maintained 500,000 monthly active users to this day. However, it has lost some users from its peak over the years to its main competitor, **League of Legends**. I am interested in exploring its player base's behavioural patterns and in-game attributes to understand player engagement in live service games and improve the player experience overall.
+The question may seem simple, but the answer is quite complex. Several factors need to be considered, such as skill level, region, wait times, playing with pre-made groups, ensuring that players don’t end up in the same lobby repeatedly, and even implementing a system to match toxic players with each other while keeping them away from those who exhibit good behaviour.
+
+In this project, we will explore the definitions of a good match and how to calculate and predict balance using machine learning architectures. Our aim is to improve the quality of online multiplayer games by focusing on player experience.
 
 ---
 
 ## Proposed Solution
 
-Through analyzing data from multiple matches and utilizing various machine learning techniques such as clustering and sentiment analysis, we can construct player profiles. These profiles can then be used to match each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
+Through analyzing data from multiple matches and utilizing various machine learning techniques such as clustering and sentiment analysis, we can construct player profiles. These profiles can then be used to group each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
 
 ### Objectives
 - Improve player engagement by enhancing matchmaking by accurately classifying players based on skill level, region, preferred position and heroes, and essential personality traits inferred from in-game activity.
@@ -31,13 +33,18 @@ Retaining users has become increasingly difficult as competition intensifies, pa
 2. **Models**
 3. **Notebooks**
 	1. [Data Cleaning and Exploration](Notebooks/Data_Cleaning_and_Exploration.ipynb)
-	2. [Players EDA](Notebooks/Players_EDA.ipynb)
-	3. Chat EDA
+	2. [Data Preprocessing](Notebooks/Data_Preprocessing.ipynb)
+	3. [Finding Clusters in Match Data](Notebooks/Match_Clusters.ipynb)
+	4. [Matches EDA and Initial Modelling](Notebooks/Matches_EDA_and_Initial_Modelling.ipynb)
 4. **References**
 5. **Reports**
 6. **src**
 
 ---
+
+## About the Game
+
+[Dota 2](https://www.dota2.com/home) is a popular free-to-play MOBA *(**M**ultiplayer **O**nline **B**attle **A**rena)* developed by **Valve**. It is played in matches between two teams of five players, with each team occupying and defending their own separate base on the map. Each player independently controls a powerful character known as a "hero" with unique abilities and play styles. During a match, players collect experience points and items for their heroes to defeat the opposing team's heroes in player-versus-player *(PVP)* combat. A team wins by being the first to destroy the other team's "Ancient," a large structure located within their base.
 
 ## Dataset Description
 
@@ -74,3 +81,9 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 | test_player            | Full player and match table with `hero_id`, `player_slot`, `match_id`, and `account_id`|  |
 
 ---
+
+## Aknowledgements
+
+I would like to express my sincere gratitude to Roddy Adams, Yasmin Halwani, Jesse Hart, and Josh Menke for their invaluable industry knowledge and guidance throughout this project. Their expertise has been instrumental in shaping the direction and quality of this work.
+
+I would also like to extend my heartfelt thanks to Borna Ghotbi and Nitin Bhandari for their mentorship and for imparting to me all the knowledge I have gained in the field of Data Science. Their wisdom and guidance have been crucial in my development and understanding in this area of study.
