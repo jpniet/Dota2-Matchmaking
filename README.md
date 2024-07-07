@@ -1,8 +1,8 @@
-# Dota 2 Matchmaking Modelling
+# Matchmaking in Online Multiplayer Games
 
 ## Project Overview
 
-Matchmaking in online video games is a significant and challenging topic, centred around a simple question: who should play together?
+Matchmaking in online multiplayer video games is a significant and challenging topic, centred around a simple question: who should play together?
 
 The question may seem simple, but the answer is quite complex. Several factors need to be considered, such as skill level, region, wait times, playing with pre-made groups, ensuring that players don’t end up in the same lobby repeatedly, and even implementing a system to match toxic players with each other while keeping them away from those who exhibit good behaviour.
 
@@ -12,7 +12,7 @@ In this project, we will explore the definitions of a good match and how to calc
 
 ## Proposed Solution
 
-Through analyzing data from multiple matches and utilizing various machine learning techniques such as clustering and sentiment analysis, we can construct player profiles. These profiles can then be used to group each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
+Through analyzing data from multiple matches and utilizing various machine learning techniques such as unsupervised clustering, LSTMs, and sentiment analysis, we can construct player profiles. These profiles can then be used to group each player with the most suitable teammates and to pair them with challenging rivals to keep them engaged.
 
 ### Objectives
 - Improve player engagement by enhancing matchmaking by accurately classifying players based on skill level, region, preferred position and heroes, and essential personality traits inferred from in-game activity.
@@ -28,17 +28,22 @@ Retaining users has become increasingly difficult as competition intensifies, pa
 ---
 
 ## Table of Contents
-
-1. **Docs**
-2. **Models**
-3. **Notebooks**
+1. **Models**
+	1. Runs
+		1. [LSTMs](Models/LSTM/runs)
+2. **Notebooks**
 	1. [Data Cleaning and Exploration](Notebooks/Data_Cleaning_and_Exploration.ipynb)
 	2. [Data Preprocessing](Notebooks/Data_Preprocessing.ipynb)
 	3. [Finding Clusters in Match Data](Notebooks/Match_Clusters.ipynb)
 	4. [Matches EDA and Initial Modelling](Notebooks/Matches_EDA_and_Initial_Modelling.ipynb)
-4. **References**
-5. **Reports**
-6. **src**
+	5. [LSTMs to Predict Match Balance](Notebooks/LSTM.ipynb)
+	6. [Predicting Win Rates to Define Skill Level](Notebooks/Player_Win_Rates.ipynb)
+	7. [Skill System](Notebooks/Players_MMR.ipynb)
+	8. [Genetic Algorithms to Optimize Matchmaking](Notebooks/Matchmaking_GA.ipynb)
+3. **Reports**
+4. **Requirements**
+5. **src**
+
 
 ---
 
@@ -80,10 +85,11 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 | test_labels            | `match_id` and `radiant_win` as integer 1 or 0 |  |
 | test_player            | Full player and match table with `hero_id`, `player_slot`, `match_id`, and `account_id`|  |
 
+
 ---
 
 ## Aknowledgements
 
-I would like to express my sincere gratitude to Roddy Adams, Yasmin Halwani, Jesse Hart, and Josh Menke for their invaluable industry knowledge and guidance throughout this project. Their expertise has been instrumental in shaping the direction and quality of this work.
+I would like to express my sincere gratitude to **Roddy Adams**, **Yasmin Halwani**, **Jesse Hart**, and **Josh Menke** for their invaluable industry knowledge and guidance throughout this project. Their expertise has been instrumental in shaping the direction and quality of this work.
 
-I would also like to extend my heartfelt thanks to Borna Ghotbi and Nitin Bhandari for their mentorship and for imparting to me all the knowledge I have gained in the field of Data Science. Their wisdom and guidance have been crucial in my development and understanding in this area of study.
+I would also like to extend my heartfelt thanks to **Borna Ghotbi** and **Nitin Bhandari** for their mentorship and for imparting to me all the knowledge I have gained in the field of Data Science. Their wisdom and guidance have been crucial in my development and understanding in this area of study.
