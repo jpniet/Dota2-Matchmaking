@@ -1,6 +1,7 @@
 absl-py @ file:///home/conda/feedstock_root/build_artifacts/absl-py_1705494584803/work
 aiohttp @ file:///Users/runner/miniforge3/conda-bld/aiohttp_1713964894369/work
 aiosignal @ file:///home/conda/feedstock_root/build_artifacts/aiosignal_1667935791922/work
+altair==5.3.0
 anyio @ file:///home/conda/feedstock_root/build_artifacts/anyio_1717693030552/work
 appnope @ file:///home/conda/feedstock_root/build_artifacts/appnope_1707233003401/work
 argon2-cffi @ file:///home/conda/feedstock_root/build_artifacts/argon2-cffi_1692818318753/work
@@ -52,6 +53,8 @@ fqdn @ file:///home/conda/feedstock_root/build_artifacts/fqdn_1638810296540/work
 frozenlist @ file:///Users/runner/miniforge3/conda-bld/frozenlist_1702645562307/work
 fsspec @ file:///home/conda/feedstock_root/build_artifacts/fsspec_1719514913127/work
 gast @ file:///home/conda/feedstock_root/build_artifacts/gast_1596839682936/work
+gitdb==4.0.11
+GitPython==3.1.43
 gmpy2 @ file:///Users/runner/miniforge3/conda-bld/gmpy2_1715527345517/work
 google-auth @ file:///home/conda/feedstock_root/build_artifacts/google-auth_1719906113316/work
 google-auth-oauthlib @ file:///home/conda/feedstock_root/build_artifacts/google-auth-oauthlib_1688235217226/work
@@ -98,9 +101,11 @@ llvmlite==0.42.0
 locket @ file:///home/conda/feedstock_root/build_artifacts/locket_1650660393415/work
 lz4 @ file:///Users/runner/miniforge3/conda-bld/lz4_1704831395733/work
 Markdown @ file:///home/conda/feedstock_root/build_artifacts/markdown_1710435156458/work
+markdown-it-py==3.0.0
 MarkupSafe @ file:///Users/runner/miniforge3/conda-bld/markupsafe_1706900210234/work
 matplotlib==3.9.0
 matplotlib-inline @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-inline_1713250518406/work
+mdurl==0.1.2
 mistune @ file:///home/conda/feedstock_root/build_artifacts/mistune_1698947099619/work
 mlxtend @ file:///home/conda/feedstock_root/build_artifacts/mlxtend_1704480921822/work
 mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1678228039184/work
@@ -150,6 +155,7 @@ pyarrow-hotfix @ file:///home/conda/feedstock_root/build_artifacts/pyarrow-hotfi
 pyasn1 @ file:///home/conda/feedstock_root/build_artifacts/pyasn1_1713209357222/work
 pyasn1_modules @ file:///home/conda/feedstock_root/build_artifacts/pyasn1-modules_1713209683338/work
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1711811537435/work
+pydeck==0.9.1
 pygame==2.5.2
 Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1714846767233/work
 PyJWT @ file:///home/conda/feedstock_root/build_artifacts/pyjwt_1706895065046/work
@@ -174,6 +180,7 @@ requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1717057054
 requests-oauthlib @ file:///home/conda/feedstock_root/build_artifacts/requests-oauthlib_1711290127547/work
 rfc3339-validator @ file:///home/conda/feedstock_root/build_artifacts/rfc3339-validator_1638811747357/work
 rfc3986-validator @ file:///home/conda/feedstock_root/build_artifacts/rfc3986-validator_1598024191506/work
+rich==13.7.1
 rpds-py @ file:///Users/runner/miniforge3/conda-bld/rpds-py_1715090021953/work
 rsa @ file:///home/conda/feedstock_root/build_artifacts/rsa_1658328885051/work
 scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1716489819945/work/dist/scikit_learn-1.5.0-cp311-cp311-macosx_11_0_arm64.whl#sha256=bb3914400d18d942dcd04ea91b396d2d8a07c8ad6fa9b34806f1d98ac269a53d
@@ -184,12 +191,14 @@ Send2Trash @ file:///Users/runner/miniforge3/conda-bld/send2trash_1712585336584/
 sip @ file:///Users/runner/miniforge3/conda-bld/sip_1697300467227/work
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 skorch @ file:///home/conda/feedstock_root/build_artifacts/skorch_1717059108563/work
+smmap==5.0.1
 sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1708952932303/work
 sortedcontainers @ file:///home/conda/feedstock_root/build_artifacts/sortedcontainers_1621217038088/work
 soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_1693929250441/work
 sparse @ file:///home/conda/feedstock_root/build_artifacts/sparse_1716530348491/work
 stack-data @ file:///home/conda/feedstock_root/build_artifacts/stack_data_1669632077133/work
 statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_1715941272213/work
+streamlit==1.36.0
 sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1718625539893/work
 tabulate @ file:///home/conda/feedstock_root/build_artifacts/tabulate_1665138452165/work
 tblib @ file:///home/conda/feedstock_root/build_artifacts/tblib_1702066284995/work
