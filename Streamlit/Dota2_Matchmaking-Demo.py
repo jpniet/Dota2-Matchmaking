@@ -23,12 +23,12 @@ regions = player_pool['cluster'].unique().tolist()
 
 # Define servers per region
 region_names = {
-    'AUSTRALIA': [171, 172],
-    'AUSTRIA': [192, 193, 191],
-    'BRAZIL': [201, 202, 204],
+    'AUSTRALIA': [171],
+    'AUSTRIA': [191, 192],
+    'BRAZIL': [204],
     'CHILE': [241, 242],
     'DUBAI': [161],
-    'EUROPE': [131, 132, 133, 134, 135, 136, 137, 138],
+    'EUROPE': [132, 133, 138],
     'INDIA': [261],
     'JAPAN': [144, 145],
     'PERU': [251],
@@ -40,9 +40,9 @@ region_names = {
     'PW UNICOM TIANJIN': [232],
     'SINGAPORE': [151, 152, 153, 154, 155, 156],
     'SOUTHAFRICA': [211, 212, 213],
-    'STOCKHOLM': [181, 182, 183, 184, 185, 186, 187, 188],
-    'US EAST': [121, 122, 123, 124],
-    'US WEST': [112, 113, 111],
+    'STOCKHOLM': [181, 182, 184, 185, 187, 188],
+    'US EAST': [121, 122, 123],
+    'US WEST': [111, 112],
 }
 
 # Define position roles
@@ -264,7 +264,7 @@ def plot_evolution(logbook):
         template='plotly_white'
     )
 
-    st.plotly_chart(fig)
+    evolution_plot.plotly_chart(fig)
 
 
 # Function to plot radar charts in a 2x5 grid
@@ -335,7 +335,7 @@ def plot_radar_charts(player_data_list, party, party_team):
     fig.text(0.00, (axs[1, 0].get_position().y0 + axs[1, 0].get_position().y1) / 2, 'Dire', va='center', ha='center', rotation='vertical', fontsize=20, color='red')
     
     fig.tight_layout()
-    st.pyplot(fig)
+    radar_charts.pyplot(fig)
 
 #------------------------#
 # Streamlit app
@@ -348,7 +348,7 @@ st.set_page_config(
 st.image('https://dslv9ilpbe7p1.cloudfront.net/ldkIN5uRK_TV5pz81ITh0Q_store_header_image')
 st.header('About the Game')
 st.write("Dota 2 is a popular free-to-play MOBA developed by Valve. Two teams of five players battle to destroy the other team's `Ancient` located in their base using powerful heroes with unique abilities.")
-st.video('https://www.youtube.com/watch?v=M5NPN6E_Mro', start_time='1m31s', end_time='2m18s', loop=True, autoplay=True, muted=True)
+st.video('https://www.youtube.com/watch?v=M5NPN6E_Mro', start_time='1m31s', end_time='10m42s', loop=True, autoplay=True, muted=True)
 
 # Player Database
 st.header('Player Database')
@@ -364,6 +364,32 @@ display_df = player_pool.drop(columns=[
     'win_rate_normalized'
     ]).rename(columns={'cluster': 'server_id'}).set_index('account').head(10000)
 st.dataframe(display_df)
+
+# Placeholders for Finding a match
+match_status = st.empty()
+elapsed_time = st.empty()
+match_fitness = st.empty()
+evolution_plot = st.empty()
+match_breakdown = st.empty()
+radar_charts = st.empty()
+
+# Genetic Algorithms
+with st.expander('Learn more about **Genetic Algorithms**', icon='🧬'):
+    st.header('Genetic Algorithms')
+    st.write('A **Genetic Algorithm** (GA) is a type of natural computing algorithm, which are algorithms developed to try to solve problems by replicating phenomena and behaviors present in nature.')
+    st.write('The Genetic Algorithm is based on concepts of genetics, where transformations are applied to data that aim to try to replicate events such as mutation, natural selection, and cross-over.')
+    st.write('To understand the algorithm it is necessary to understand the concepts behind it.')
+    st.write('- **Individual**: a member of the population that represents a single possible solution to the problem. Mathematically, it can be represented as an array of values, where each value in the array is a coefficient linked to the response equation of the analyzed problem.\n'\
+            '- **Population**: a group of individuals who are candidates for the answer to the analyzed problem.\n'\
+            '- **Tournament**: method of selecting the fittest individuals in the population. It consists of comparing the results of two (or more) individuals from the population and selecting the one that obtains the best result.\n'\
+            '- **Cross-over**: operation of recombination of genes, where the genetic code of the parents is combined to generate the child. One (or more) cutoff points are defined, where the child receives all genes from the beginning of the genetic code to the cutoff point from the Parent 1 and all genes from the cutoff point to the end of the genetic code from the Parent 2. The picture below (Figure 1) shows an example of a cross-over operation with one cutoff point, where each cell represents a coefficient linked to the response equation.')
+    st.image('https://miro.medium.com/v2/resize:fit:568/format:webp/1*uE7nLX4dBJoAckIo-UiuoA.png', caption='Figure 1 — Example of a cross-over operation — image by author')
+    st.write('- Mutation: operation that modifies the value of a gene to a value different from the original. Figure 2 shows an example of mutation applied to an individual.')
+    st.image('https://miro.medium.com/v2/resize:fit:640/format:webp/1*whK7XbarK8wGUJHBNboTCA.png', caption='Figure 2 — Example of a mutation operation on the second gene— image by author')
+    st.write('---')
+    st.image('https://www.researchgate.net/publication/311092690/figure/download/fig1/AS:434236386746379@1480541430592/Illustration-of-the-Genetic-Algorithm-In-the-first-iteration-the-Genetic-Algorithm.png?_sg=V5Q3TTXb6RhBcXtmvTBG_9JGuZN9k1SUwk5aodG0aRqbWcRhwogMiOhwh0FOxjzEY1IlXQK1mwA',
+             caption='Brief diagram explaining how genetic algotirhms work')
+    st.write('\n*Source: [Genetic Algorithm and its practicality in Machine Learning](https://towardsdatascience.com/genetic-algorithm-6aefd897f1ac)*')
 
 # Genetic algorithm parameters
 st.sidebar.header('Genetic Algorithm Params')
@@ -393,6 +419,8 @@ for i in range(party_size):
     party.append(user)
 
 if st.sidebar.button('Find a Match'):
+    match_status.subheader(':hourglass_flowing_sand: Looking for a Match...')
+
     print('--------------------------------\n')
     for i, user in enumerate(party):
         print(f"Player {i+1}:"\
@@ -425,13 +453,10 @@ if st.sidebar.button('Find a Match'):
 
     # Display matchmaking optimization
     best_match = hof[0]
-    st.subheader('Matchmaking Optimization')
-    st.write(f"Best Match Fitness: **{(evaluate_match(best_match)[0])*100:.2f}%**")
+    match_status.subheader(':white_check_mark: Match Found!')
+    elapsed_time.write(f"Elapsed time: *{end_time:.2f} seconds*")
+    match_fitness.write(f"Best Match Fitness: **{(evaluate_match(best_match)[0])*100:.2f}%**")
     plot_evolution(logbook)
-
-    # Display the match breakdown
-    st.subheader('Match Found!')
-    st.write(f"Elapsed time: *{end_time:.2f} seconds*")
 
     # Select a random team to assign users
     party_team = random.choice(['Radiant', 'Dire'])
@@ -464,20 +489,6 @@ if st.sidebar.button('Find a Match'):
             
         player_data_list.append((team, radar_data, player_info))
 
+    # Display the match breakdown
+    match_breakdown.subheader('Match Breakdown')
     plot_radar_charts(player_data_list, party, party_team)
-
-    # Genetic Algorithms
-    with st.expander('Learn more about **Genetic Algorithms**', icon='🧬'):
-        st.header('Genetic Algorithms')
-        st.write('Genetic algorithm (GA) is a metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms (EA). Genetic algorithms are commonly used to generate high-quality solutions to optimization and search problems by relying on biologically inspired operators such as mutation, crossover and selection.')
-        st.image('https://www.researchgate.net/publication/311092690/figure/download/fig1/AS:434236386746379@1480541430592/Illustration-of-the-Genetic-Algorithm-In-the-first-iteration-the-Genetic-Algorithm.png?_sg=V5Q3TTXb6RhBcXtmvTBG_9JGuZN9k1SUwk5aodG0aRqbWcRhwogMiOhwh0FOxjzEY1IlXQK1mwA',
-                 caption='Brief diagram explaining how genetic algotirhms work')
-        st.write('#### Population')
-        st.write('A population is a group of individuals or Chromosomes and each individual is a candidate solution to The problem.')
-        st.write('#### Chromosome')
-        st.write('A Chromosome is An individual that contains a set of parameters known as Genes.')
-        st.write('#### Gene')
-        st.write('A Chromosome Contains a list of Parameters , this parameters we call them genes.')
-        st.write('#### Fitness Function')
-        st.write('A fitness function is a particular type of objective function which takes as input a candidate solution and outputs the quality of this solution, therefore the fitness function makes it possible to evaluate the candidate solutions.')
-        st.write('\n*Source: [Genetic Algorithm Explained](https://medium.com/@AnasBrital98/genetic-algorithm-explained-76dfbc5de85d)*')
