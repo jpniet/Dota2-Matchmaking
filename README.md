@@ -92,4 +92,4 @@ This dataset was collected by [**Devin Anzelmo**](https://www.kaggle.com/dataset
 
 I would like to express my sincere gratitude to **Roddy Adams**, **Yasmin Halwani**, **Jesse Hart**, and **Josh Menke** for their invaluable industry knowledge and guidance throughout this project. Their expertise has been instrumental in shaping the direction and quality of this work.
 
-I would also like to extend my heartfelt thanks to **Borna Ghotbi** and **Nitin Bhandari** for their mentorship and for imparting to me all the knowledge I have gained in the field of Data Science. Their wisdom and guidance have been crucial in my development and understanding in this area of study.
+I would also like to extend my heartfelt thanks to **Borna Ghotbi** and **Nitin Bhandari** for their mentorship and for imparting to me all the knowledge I have gained in the field of Data Science. Their wisdom and guidance have been crucial in my development and understanding in this area of study. I'd also like to thank **Rodrigo Pelayo** and **Jiro Amato** for their ongoing support in this new journey.
