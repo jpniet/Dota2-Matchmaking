@@ -339,10 +339,16 @@ def plot_radar_charts(player_data_list, party, party_team):
 
 #------------------------#
 # Streamlit app
-st.image('../src/dota2_header.png')
+st.set_page_config(
+    page_title='Dota 2 Matchmaking Demo',
+    page_icon='https://seeklogo.com/images/D/dota-2-logo-A8CAC9B4C9-seeklogo.com.png',
+    layout='wide'
+)
+
+st.image('https://dslv9ilpbe7p1.cloudfront.net/ldkIN5uRK_TV5pz81ITh0Q_store_header_image')
 st.header('About the Game')
 st.write("Dota 2 is a popular free-to-play MOBA developed by Valve. Two teams of five players battle to destroy the other team's `Ancient` located in their base using powerful heroes with unique abilities.")
-st.image('../src/dota2_gameplay.gif')
+st.video('https://www.youtube.com/watch?v=M5NPN6E_Mro', start_time='1m31s', end_time='2m18s', loop=True, autoplay=True, muted=True)
 
 # Player Database
 st.header('Player Database')
@@ -387,6 +393,14 @@ for i in range(party_size):
     party.append(user)
 
 if st.sidebar.button('Find a Match'):
+    print('--------------------------------\n')
+    for i, user in enumerate(party):
+        print(f"Player {i+1}:"\
+         f"\n    Account: {user['account']}"\
+         f"\n    Role selected: {user['role']}"\
+         f"\n    Position assigned: {user['position'][0]}\n")
+    print('--------------------------------\n')
+
     # Select a random server in the user's region
     server_ids = region_names[user_region]
     selected_server = random.choice(server_ids)
@@ -451,3 +465,19 @@ if st.sidebar.button('Find a Match'):
         player_data_list.append((team, radar_data, player_info))
 
     plot_radar_charts(player_data_list, party, party_team)
+
+    # Genetic Algorithms
+    with st.expander('Learn more about **Genetic Algorithms**', icon='🧬'):
+        st.header('Genetic Algorithms')
+        st.write('Genetic algorithm (GA) is a metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms (EA). Genetic algorithms are commonly used to generate high-quality solutions to optimization and search problems by relying on biologically inspired operators such as mutation, crossover and selection.')
+        st.image('https://www.researchgate.net/publication/311092690/figure/download/fig1/AS:434236386746379@1480541430592/Illustration-of-the-Genetic-Algorithm-In-the-first-iteration-the-Genetic-Algorithm.png?_sg=V5Q3TTXb6RhBcXtmvTBG_9JGuZN9k1SUwk5aodG0aRqbWcRhwogMiOhwh0FOxjzEY1IlXQK1mwA',
+                 caption='Brief diagram explaining how genetic algotirhms work')
+        st.write('#### Population')
+        st.write('A population is a group of individuals or Chromosomes and each individual is a candidate solution to The problem.')
+        st.write('#### Chromosome')
+        st.write('A Chromosome is An individual that contains a set of parameters known as Genes.')
+        st.write('#### Gene')
+        st.write('A Chromosome Contains a list of Parameters , this parameters we call them genes.')
+        st.write('#### Fitness Function')
+        st.write('A fitness function is a particular type of objective function which takes as input a candidate solution and outputs the quality of this solution, therefore the fitness function makes it possible to evaluate the candidate solutions.')
+        st.write('\n*Source: [Genetic Algorithm Explained](https://medium.com/@AnasBrital98/genetic-algorithm-explained-76dfbc5de85d)*')
